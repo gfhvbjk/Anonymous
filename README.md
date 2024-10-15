@@ -4,13 +4,10 @@
 
 ## Overview
 
-
 - This repository contains the source code and documentation for the paper "Stochastic Weight Sharing for Bayesian Neural Networks" submitted to the AISTATS conference. 
-
 
 ## Repository Structure
 
-```
 .
 ├── .git/                                # Git repository files
 ├── bnn/                                 # Bayesian Neural Network related code
@@ -25,23 +22,18 @@
 ├── train.py                             # Training script
 ├── utils.py                             # Utility functions
 └── visualize_stochastic_weights_scatter.py  # Visualization script for stochastic weights scatter
-```
 
 ## Installation
 
-```
 To get started, clone the repository and install the required dependencies:
 
 git clone git@github.com:gfhvbjk/Anonymous.git
 cd Anonymouse
 pip install -r requirements.txt
-```
 
 Note: we use **pyro** as VI tool, therefore, pls install pyro as following:
 
-```bash
 pip3 install pyro-ppl
-```
 
 ## Usage
 
@@ -52,7 +44,6 @@ pip3 install pyro-ppl
     - put the ImageNet1k as "data/train" and "data/val" (recommendation)
     - or you can specify the specific the path of ImageNet by adding `-dataset_path = your path` (not recommendation)
 
-
 ## Evaluation and Checkpoints
 
 We provide the following `Evaluation` scripts in this repository.
@@ -60,14 +51,14 @@ We provide the following `Evaluation` scripts in this repository.
 #### ImageNet1k by ResNet-18
 - ImageNet1k by ResNet-18 script: predict_acc_nll_ece_resnet18_imagenet.py
     - Download our pre-trained model [here](https://drive.google.com/file/d/16KPKHEAaV7o-x_C-orPRCOxJJdsm9YLi/view?usp=drive_link) and put it under **checkpoint/resnet18/imagenet/2DGBNNs/**
-    - ```bash
+    - 
       python predict_acc_nll_ece_resnet18_imagenet.py
-      ```
+    
     - Or you can put the pre-trained model anywhere by running
-    - ```bash
+    
       python predict_acc_nll_ece_resnet18_imagenet.py -weights_path your_path
-      ```
-- The outouts include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
+    
+- The outputs include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
 
 |       Metric        |      Value       |
 |:-------------------:|:----------------:|
@@ -82,14 +73,14 @@ We provide the following `Evaluation` scripts in this repository.
 
 - CIFAR-100 by ResNet-18 script: predict_acc_nll_ece_resnet18_cifar100.py
     - Download our pre-trained model [here](https://drive.google.com/file/d/1XlQud73NjqE_g4ymi0lglLYvus9xs_oL/view?usp=drive_link) and put it under **checkpoint/resnet18/cifar100/2DGBNNs/**
-    - ```bash
+    - 
       python predict_acc_nll_ece_resnet18_cifar100.py
-      ```
+    
     - Or you can put the pre-trained model anywhere by running
-    - ```bash
+    
       python predict_acc_nll_ece_resnet18_cifar100.py -weights_path your_path
-      ```
-- The outouts include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
+    
+- The outputs include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
 
 |       Metric        |     Value     |
 |:-------------------:|:-------------:|
@@ -105,14 +96,14 @@ We provide the following `Evaluation` scripts in this repository.
 
 - CIFAR-10 by ResNet-18 script: predict_acc_nll_ece_resnet18_cifar10.py
     - Download our pre-trained model [here](https://drive.google.com/file/d/1G1uvjUKeQ3ir7RIzagxVTjryho3p8JB_/view?usp=drive_link) and put it under **checkpoint/resnet18/cifar10/2DGBNNs/**
-    - ```bash
+    - 
       python predict_acc_nll_ece_resnet18_cifar10.py
-      ```
+    
     - Or you can put the pre-trained model anywhere by running
-    - ```bash
+    
       python predict_acc_nll_ece_resnet18_cifar10.py -weights_path your_path
-      ```
-- The outouts include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
+    
+- The outputs include `Outliers`, `Ellipses`, `Gaussians`, `Accuracy`, `NLL` and `ECE`
 
 |       Metric        |     Value     |
 |:-------------------:|:-------------:|
@@ -125,12 +116,10 @@ We provide the following `Evaluation` scripts in this repository.
 
 
 
-
 ## Train
-> During training, three stages in totally, including weights init, stochatic network training and finally the `2DGBNNs` training.
+> During training, three stages in totally, including weights init, stochastic network training and finally the `2DGBNNs` training.
 
-
-- We provide all stage scripts and instructions of training of WRN-28-10 in CIFAR-100 step by step, also `checkpoint(pre-trained weights)` provided if exist and can extremely save your time by just putting them into the correponding folder.
+- We provide all stage scripts and instructions of training of WRN-28-10 in CIFAR-100 step by step, also `checkpoint(pre-trained weights)` provided if exist and can extremely save your time by just putting them into the corresponding folder.
 - All pre-trained can download in this folder. [here](https://drive.google.com/drive/folders/1_j9tCvX91UT4EEBeXOZ3Nm7owKi_km4k?usp=drive_link)
 - **But we highly recommend you download one by one following steps.**
 ### Algorithm: Scaling BNNs to Large Models and Datasets
@@ -150,9 +139,7 @@ We provide the following `Evaluation` scripts in this repository.
 1. **Train deterministic neural network**
 
 Run the following script:
-```bash
 python train_deterministic_network.py -net wrn -dataset cifar100
-```
 
 You can download our pre-trained model in [here](https://drive.google.com/file/d/1G1uvjUKeQ3ir7RIzagxVTjryho3p8JB_/view?usp=drive_link)
 And put it under "checkpoint/wrn/cifar100/origin"
@@ -166,24 +153,22 @@ And put it under "checkpoint/wrn/cifar100/origin"
 2. **Pre-training Loop**  
    For each epoch:
    - Sample weights:  
-     $$\mathbf{w} = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I})$$
+     $\mathbf{w} = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I})$
    - Update $\mu$, $\sigma$ by training on $\mathcal{D}$.
 
 3. **Identify Outliers**  
    For each weight $w_i$:
    - If $|w_i| > \tau_w$ **or** $|\nabla_{w_i}|$ is in the top $1\%$, then $w_i$ is an outlier.
    - Else, $w_i$ is an inlier.
-   - 
+   
 4. **Learn GMM on Inliers**  
    Learn GMM on inlier parameters $\Theta_{in}$.
 
 > pick a deterministic pre-trained model and get its path 
 
 Run the following script:
-```bash
-python exp_stochastic_nn.py -net wrn -dataset cifar100 -weights_path "checkpoint/wrn/origin/wrn.pth" (pls it replace by your path)
-```
-This pretrained model can downloaded in [here](https://drive.google.com/file/d/1QUOlqPydz0pH7tDYnOGenN6E4rm7Jn1D/view?usp=drive_link)
+python exp_stochastic_nn.py -net wrn -dataset cifar100 -weights_path "checkpoint/wrn/origin/wrn.pth" (pls replace it by your path)
+This pre-trained model can be downloaded in [here](https://drive.google.com/file/d/1QUOlqPydz0pH7tDYnOGenN6E4rm7Jn1D/view?usp=drive_link)
 
 > Now, we need to initialize the GMM, pls pick a stochastic neural network and get its path
 
@@ -191,14 +176,10 @@ Run the following script:
 
 Note that: we need to install cuml and cudf for GMM weights initiation (must installation)
 install them by following:
-```bash
 pip install cudf-cu11 cuml-cu11
-```
 And then run the following bash command:
-```bash
 python init_gmm.py -weights_path "checkpoint/wrn/cifar100/stochastic/wrn_stochastic.pth" (pls replace it by your path)
-```
-This pre-trained model can download in [here](https://drive.google.com/file/d/1QUOlqPydz0pH7tDYnOGenN6E4rm7Jn1D/view?usp=drive_link)
+This pre-trained model can be downloaded in [here](https://drive.google.com/file/d/1QUOlqPydz0pH7tDYnOGenN6E4rm7Jn1D/view?usp=drive_link)
 
 > The initiation gmm configuration will be stored under "checkpoint/wrn/cifar100/init_gmm" 
 
@@ -233,18 +214,12 @@ This pre-trained model can download in [here](https://drive.google.com/file/d/1Q
 
 - To train the model, run the following command:
 
-```bash
 python 2DGBNNs_train.py -weights_stochastic_path "checkpoint/wrn/cifar100/stochastic/stochastic_wrn.pth" (pls replace it by your path) \
 -weights_path_origin "checkpoint/wrn/cifar100/origin/wrn.pth" (pls replace it by your path) \
 -init_gmm "checkpoint/wrn/cifar100/init_gmm/clusters_gpu.json" (pls replace it by your path) \
 -output "checkpoint/wrn/cifar100/2DGBNNs"
-```
-
-This pre-trained model can download in [here](https://drive.google.com/file/d/1L9n2hV0HV0YiYujbU2vfKjc-Sh-tI6br/view?usp=drive_link)
-
+This pre-trained model can be downloaded in [here](https://drive.google.com/file/d/1L9n2hV0HV0YiYujbU2vfKjc-Sh-tI6br/view?usp=drive_link)
 
 ## License
 
-```
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-```

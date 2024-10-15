@@ -1,0 +1,15 @@
+checkpoints/
+data/
+data2/
+checkpoint/
+checkpoint2/
+params/
+figs/
+runs/
+figs3/
+output/
+bnn_checkpoint/
+pyro/
+__pycache__/
+.idea/
+#models.json

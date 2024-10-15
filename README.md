@@ -12,19 +12,32 @@
 
 ```
 .
-├── .git/                                # Git repository files
-├── bnn/                                 # Bayesian Neural Network-related code
-├── checkpoints/                         # Directory for storing checkpoints
-├── conf/                                # Configuration files
-├── data/                                # Directory for datasets
-├── models/                              # Directory for model definitions
-├── params/                              # Directory for temp storing parameter files
-├── README.md                            # Project overview and setup instructions
-├── gmm_train.py                         # Training script for Gaussian Mixture Model
-├── stochastic_nn.py                     # Script for stochastic neural network
-├── train.py                             # Training script
-├── utils.py                             # Utility functions
-└── visualize_stochastic_weights_scatter.py  # Visualization script for stochastic weights scatter
+├── bnn/                                  # Bayesian Neural Network related code and files
+├── checkpoint/                           # Directory for storing checkpoints during training
+├── checkpoint_eval/                      # Directory for storing evaluation checkpoints
+├── conf/                                 # Configuration files for experiments
+├── data/                                 # Directory for datasets used in experiments
+├── models/                               # Model definitions and architecture files
+├── networks/                             # Contains different neural network architecture files
+├── Visualization/                        # Scripts and tools for data visualization
+├── .gitignore                            # Git ignore file to specify untracked files
+├── 2DGBNNs_train.py                      # Training script for 2D Gaussian Bayesian Neural Networks
+├── exp_stochastic_nn.py                  # Experiment script for stochastic neural networks
+├── gmm_train.py                          # Script to train Gaussian Mixture Models
+├── init_gmm.py                           # Script to initialize Gaussian Mixture Models
+├── kmeans_init.py                        # Script to initialize K-means clustering
+├── predict_acc_nll_ece.py                # Script to predict accuracy, negative log-likelihood, and expected calibration error
+├── predict_acc_nll_ece_resnet18_cifar10.py  # Prediction script for ResNet-18 on CIFAR-10
+├── predict_acc_nll_ece_resnet18_cifar100.py # Prediction script for ResNet-18 on CIFAR-100
+├── predict_acc_nll_ece_resnet18_imagenet.py # Prediction script for ResNet-18 on ImageNet
+├── predict_acc_nll_ece_wrn_cifar100.py   # Prediction script for Wide Residual Network on CIFAR-100
+├── README.md                             # Markdown file with project overview and instructions
+├── requirements.txt                      # Required libraries and dependencies for the project
+├── run.bat                               # Batch file for running scripts on Windows
+├── train_deterministic_network.py        # Script for training deterministic neural networks
+├── utils.py                              # Utility functions used across the project
+└── visualize_stochastic_weights_scatter.py # Script to visualize weight scatter in stochastic models
+
 ```
 
 ## Installation
